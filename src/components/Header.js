@@ -43,7 +43,7 @@ export default function Header() {
 
           <nav className="hidden lg:block" aria-label="Main">
             <ul className="flex items-center gap-1">
-              {nav.slice(0, -1).map((item) => (
+              {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -68,7 +68,7 @@ export default function Header() {
               href="/contact"
               className="hidden items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-bold text-white transition hover:bg-coal sm:inline-flex"
             >
-              Contact Us
+              Get a Quote
               <span className="grid size-6 place-items-center rounded-full bg-brand text-ink">
                 <Icon name="arrow" className="size-3.5" strokeWidth={2.4} />
               </span>
