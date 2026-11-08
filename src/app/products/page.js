@@ -11,9 +11,9 @@ export default function ProductsPage() {
     <>
       <PageHero
         crumb="Products"
-        eyebrow="Our range"
-        title="Quality products for demanding work."
-        text="Browse our main categories below. Can’t see what you need? Send us the specification — we source it."
+        eyebrow="Key clients"
+        title="World-class brands entrusted to ASC."
+        text="Our diverse portfolio includes over 40 world-class brands from global clients — nearly all of them rank #1 or #2 in their categories."
       />
 
       {/* Category jump bar */}
@@ -49,7 +49,7 @@ export default function ProductsPage() {
                 ))}
               </ul>
               <Link href={`/contact?product=${p.slug}`} className="group mt-8 inline-flex items-center gap-2 self-start text-sm font-bold text-flame">
-                Enquire about {p.title.toLowerCase()}
+                Enquire about {p.title}
                 <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -60,10 +60,10 @@ export default function ProductsPage() {
       <section className="container-x">
         <div className="flex flex-col items-start justify-between gap-6 rounded-[2rem] border-2 border-dashed border-amber/50 p-10 md:flex-row md:items-center">
           <div>
-            <h2 className="font-display text-3xl font-extrabold">Looking for a specific brand or part number?</h2>
-            <p className="mt-2 text-graphite/70">Our sourcing team finds specialised items and alternatives quickly.</p>
+            <h2 className="font-display text-3xl font-extrabold">Want ASC to distribute your brand in Bahrain?</h2>
+            <p className="mt-2 text-graphite/70">We welcome new clients for our sales, merchandising, trade marketing and logistics services.</p>
           </div>
-          <Button href="/contact" variant="dark">Send your requirement</Button>
+          <Button href="/contact" variant="dark">Business inquiry</Button>
         </div>
       </section>
 

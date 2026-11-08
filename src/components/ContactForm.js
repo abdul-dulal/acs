@@ -16,8 +16,8 @@ export default function ContactForm({ products, email }) {
   function onSubmit(e) {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(e.currentTarget));
-    const subject = `Website enquiry${d.product ? ` — ${d.product}` : ""}`;
-    const body = `Name: ${d.name}\nCompany: ${d.company}\nPhone: ${d.phone}\nEmail: ${d.email}\nInterest: ${d.product}\n\n${d.message}`;
+    const subject = `Business inquiry${d.product ? ` — ${d.product}` : ""}`;
+    const body = `Name: ${d.name}\nJob title: ${d.jobTitle}\nCompany: ${d.company}\nCountry: ${d.country}\nPhone: ${d.phone}\nEmail: ${d.email}\nRegarding: ${d.product}\n\n${d.message}`;
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   }
@@ -40,8 +40,16 @@ export default function ContactForm({ products, email }) {
         <input name="name" required className={field} placeholder="Your name" autoComplete="name" />
       </label>
       <label className="grid gap-1.5 text-sm font-semibold">
-        Company
+        Job title
+        <input name="jobTitle" className={field} placeholder="Your role" autoComplete="organization-title" />
+      </label>
+      <label className="grid gap-1.5 text-sm font-semibold">
+        Company name
         <input name="company" className={field} placeholder="Company name" autoComplete="organization" />
+      </label>
+      <label className="grid gap-1.5 text-sm font-semibold">
+        Country
+        <input name="country" className={field} placeholder="Country" autoComplete="country-name" />
       </label>
       <label className="grid gap-1.5 text-sm font-semibold">
         Email *
@@ -52,7 +60,7 @@ export default function ContactForm({ products, email }) {
         <input name="phone" type="tel" className={field} placeholder="+973" autoComplete="tel" />
       </label>
       <label className="grid gap-1.5 text-sm font-semibold sm:col-span-2">
-        I’m interested in
+        Regarding
         <select name="product" defaultValue={products.find((p) => p.slug === preset)?.title ?? ""} className={field}>
           <option value="">General enquiry</option>
           {products.map((p) => (
@@ -62,7 +70,7 @@ export default function ContactForm({ products, email }) {
       </label>
       <label className="grid gap-1.5 text-sm font-semibold sm:col-span-2">
         Message *
-        <textarea name="message" required rows={5} className={field} placeholder="Item, specification, quantity, delivery location…" />
+        <textarea name="message" required rows={5} className={field} placeholder="How can we help you?" />
       </label>
       <button
         type="submit"

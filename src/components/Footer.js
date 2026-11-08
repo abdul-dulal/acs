@@ -18,7 +18,8 @@ export default function Footer() {
           </div>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-steel">{company.name}</p>
           <p className="mt-5 max-w-sm leading-relaxed">
-            Industrial materials, equipment and technical services for projects and operations across the {company.country}.
+            One of the Kingdom’s foremost distributors of fast moving consumer goods — bringing over 40 world-class
+            brands to shelves across the {company.country} since {company.founded}.
           </p>
         </div>
 
@@ -34,7 +35,7 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-3">
-          <h3 className="font-display text-lg font-bold uppercase tracking-wide text-white">Products</h3>
+          <h3 className="font-display text-lg font-bold uppercase tracking-wide text-white">Key Clients</h3>
           <ul className="mt-4 space-y-2.5">
             {products.slice(0, 6).map((p) => (
               <li key={p.slug}>
@@ -47,10 +48,10 @@ export default function Footer() {
         <div className="lg:col-span-3">
           <h3 className="font-display text-lg font-bold uppercase tracking-wide text-white">Get in touch</h3>
           <ul className="mt-4 space-y-4 text-sm">
-            <li className="flex gap-3"><Icon name="pin" className="size-5 shrink-0 text-amber" />{company.address}</li>
+            <li className="flex gap-3"><Icon name="pin" className="size-5 shrink-0 text-amber" />Head Office: {company.address}</li>
             <li className="flex gap-3"><Icon name="phone" className="size-5 shrink-0 text-amber" />{company.phone}</li>
             <li className="flex gap-3"><Icon name="mail" className="size-5 shrink-0 text-amber" />{company.email}</li>
-            <li className="flex gap-3"><Icon name="clock" className="size-5 shrink-0 text-amber" />{company.hours}</li>
+            <li className="flex gap-3"><Icon name="truck" className="size-5 shrink-0 text-amber" />Distribution Center: Bahrain Investment Wharf, Hidd</li>
           </ul>
         </div>
       </div>

@@ -22,11 +22,11 @@ const tajawal = Tajawal({
 
 export const metadata = {
   title: {
-    default: "ASC — Abu Dawood Al Saffar | Industrial Supply, Bahrain",
-    template: "%s | ASC Bahrain",
+    default: "Abudawood AlSaffar Company (ASC) | FMCG Distribution, Bahrain",
+    template: "%s | Abudawood AlSaffar Company",
   },
   description:
-    "Abu Dawood Al Saffar (ASC) supplies industrial materials, equipment and technical services to projects across the Kingdom of Bahrain.",
+    "Abudawood AlSaffar Company (ASC) is one of Bahrain’s foremost sales and distribution companies for fast moving consumer goods, representing over 40 world-class brands since 2005.",
 };
 
 export default function RootLayout({ children }) {

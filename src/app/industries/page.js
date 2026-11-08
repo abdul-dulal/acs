@@ -1,7 +1,7 @@
 import Icon from "@/components/Icon";
 import Wings from "@/components/Wings";
 import { CtaBand, PageHero, SectionHeading } from "@/components/ui";
-import { industries } from "@/lib/site";
+import { channelsIntro, industries, strengths } from "@/lib/site";
 
 export const metadata = { title: "Industries" };
 
@@ -10,9 +10,9 @@ export default function IndustriesPage() {
     <>
       <PageHero
         crumb="Industries"
-        eyebrow="Sectors we serve"
-        title="One partner across many industries."
-        text="Each sector has its own standards, approvals and pace. Our team adapts supply and service to fit."
+        eyebrow="Our channels"
+        title="Deep coverage across every channel."
+        text={channelsIntro}
       />
 
       <section className="container-x py-24">
@@ -40,17 +40,12 @@ export default function IndustriesPage() {
       <section className="bg-mist py-24">
         <div className="container-x grid items-center gap-14 lg:grid-cols-2">
           <SectionHeading
-            eyebrow="Why industries choose ASC"
-            title="Standards, speed and accountability."
-            text="Whether it is a shutdown, a new build or routine maintenance, we plan supply around your schedule and your compliance requirements."
+            eyebrow="Our strengths"
+            title="Four core strengths that help us excel."
+            text="We define key business drivers for every channel based on research, data analysis and market learnings — and explore new channels to take brands to shoppers through all mediums."
           />
           <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              ["shield", "Compliant supply", "Materials with the certificates and test reports your project needs."],
-              ["clock", "Shutdown-ready", "Priority handling when downtime is measured in hours."],
-              ["truck", "Staged delivery", "Dispatch in phases that match site progress."],
-              ["headset", "Single point of contact", "One account manager who knows your project."],
-            ].map(([icon, title, text]) => (
+            {strengths.map(({ icon, title, text }) => (
               <div key={title} className="rounded-3xl bg-white p-6 ring-1 ring-black/5">
                 <Icon name={icon} className="size-7 text-flame" />
                 <h3 className="mt-4 font-display text-xl font-bold">{title}</h3>

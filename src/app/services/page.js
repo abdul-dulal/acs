@@ -1,6 +1,6 @@
 import Icon from "@/components/Icon";
 import { CtaBand, IconBadge, PageHero, SectionHeading } from "@/components/ui";
-import { process, services } from "@/lib/site";
+import { logisticsFacts, process, salesPoints, services } from "@/lib/site";
 
 export const metadata = { title: "Services" };
 
@@ -11,8 +11,8 @@ export default function ServicesPage() {
       <PageHero
         crumb="Services"
         eyebrow="What we do"
-        title="Services that keep projects moving."
-        text="Beyond supply, our technical team supports you with sourcing, advice, installation and maintenance."
+        title="Strategic services for world-class clients."
+        text="A full selection of complementary services, offered in ways that address client-specific needs and optimise local market return on investment."
       />
 
       <section className="container-x py-24">
@@ -22,11 +22,11 @@ export default function ServicesPage() {
             <span className="grid size-16 place-items-center rounded-2xl bg-ink text-sun">
               <Icon name={featured.icon} className="size-8" />
             </span>
-            <p className="mt-10 text-xs font-bold uppercase tracking-[0.25em] text-ink/60">Core service</p>
+            <p className="mt-10 text-xs font-bold uppercase tracking-[0.25em] text-ink/60">Customer Business Development</p>
             <h2 className="mt-2 font-display text-5xl font-extrabold leading-none tracking-tight text-ink">{featured.title}</h2>
             <p className="mt-5 text-lg text-ink/75">{featured.text}</p>
             <ul className="mt-8 space-y-3 font-semibold text-ink">
-              {["One consolidated quotation", "Approved-vendor sourcing", "Alternatives when items are scarce", "Order tracking to delivery"].map((t) => (
+              {salesPoints.map((t) => (
                 <li key={t} className="flex items-center gap-3">
                   <span className="grid size-6 place-items-center rounded-full bg-ink text-sun"><Icon name="check" className="size-3.5" strokeWidth={3} /></span>
                   {t}
@@ -43,13 +43,26 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
+
+        {/* Distribution centre facts */}
+        <div className="mt-16">
+          <SectionHeading eyebrow="Distribution center" title="A state-of-the-art logistics facility at Hidd." />
+          <dl className="mt-10 grid overflow-hidden rounded-[2rem] bg-ink sm:grid-cols-2 lg:grid-cols-4">
+            {logisticsFacts.map((s, i) => (
+              <div key={s.label} className={`p-10 ${i > 0 ? "border-t border-white/10 sm:border-t-0 sm:border-l" : ""}`}>
+                <dd className="font-display text-6xl font-extrabold text-brand">{s.value}</dd>
+                <dt className="mt-2 text-white/60">{s.label}</dt>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
 
       {/* Process timeline */}
       <section className="relative overflow-hidden bg-ink py-24 text-white">
         <div className="bg-grid absolute inset-0" />
         <div className="container-x relative">
-          <SectionHeading light center eyebrow="Our process" title="Simple, transparent, on schedule." />
+          <SectionHeading light center eyebrow="Business process" title="Proprietary processes, refined over many years." />
           <ol className="relative mt-16 grid gap-10 md:grid-cols-4">
             <span className="absolute top-7 right-[12%] left-[12%] hidden h-0.5 bg-brand md:block" />
             {process.map((step, i) => (

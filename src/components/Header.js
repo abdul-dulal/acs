@@ -27,7 +27,7 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5">
-              <Icon name="clock" className="size-3.5" /> {company.hours}
+              <Icon name="check" className="size-3.5" /> {company.badge}
             </span>
             <span lang="ar" dir="rtl" className="font-arabic text-sm text-sun">{company.nameAr}</span>
           </div>

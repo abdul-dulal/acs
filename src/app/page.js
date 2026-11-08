@@ -20,15 +20,15 @@ export default function Home() {
               {company.tagline}
             </div>
             <h1 className="mt-7 font-display text-6xl font-extrabold leading-[0.92] tracking-tight sm:text-7xl xl:text-8xl">
-              Supplying the industries that <span className="text-brand">build Bahrain.</span>
+              World-class brands on <span className="text-brand">every shelf in Bahrain.</span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/65">
-              From valves and pipes to safety gear and on-site services, {company.name} delivers the right material,
-              the right specification and a dependable delivery date.
+              Since 2005, {company.name} has grown into one of the Kingdom’s foremost distributors of fast moving
+              consumer goods — representing over 40 brands that lead their categories.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Button href="/contact">Request a quote</Button>
-              <Button href="/products" variant="ghost">Explore products</Button>
+              <Button href="/contact">Business inquiry</Button>
+              <Button href="/products" variant="ghost">Our key clients</Button>
             </div>
           </div>
 
@@ -45,8 +45,8 @@ export default function Home() {
               <div className="absolute -right-2 bottom-20 flex items-center gap-3 rounded-2xl bg-white p-4 text-ink shadow-2xl sm:-right-6">
                 <span className="grid size-10 place-items-center rounded-xl bg-brand"><Icon name="check" className="size-5" strokeWidth={2.6} /></span>
                 <div>
-                  <p className="text-sm font-bold">Genuine products</p>
-                  <p className="text-xs text-graphite/70">Approved manufacturers</p>
+                  <p className="text-sm font-bold">ISO 9001:2015</p>
+                  <p className="text-xs text-graphite/70">Certified quality</p>
                 </div>
               </div>
             </div>
@@ -83,11 +83,11 @@ export default function Home() {
         <div>
           <SectionHeading
             eyebrow="Who we are"
-            title="A one-stop industrial partner, rooted in Bahrain."
-            text={`${company.name} brings together a broad product range, technical know-how and local service, so contractors and plant teams can buy with confidence and build without delays.`}
+            title="Strategic services for world-class brands."
+            text={company.intro}
           />
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {["Single-source procurement", "Engineer-backed advice", "Local stock & fast delivery", "After-sales you can reach"].map((t) => (
+            {["Key Account Management", "Retail & Van Sales", "Merchandising", "Customer Services & Logistics"].map((t) => (
               <li key={t} className="flex items-center gap-3 font-semibold">
                 <span className="grid size-6 place-items-center rounded-full bg-brand"><Icon name="check" className="size-3.5" strokeWidth={3} /></span>
                 {t}
@@ -108,12 +108,12 @@ export default function Home() {
           <div className="rounded-3xl bg-ink p-7 text-white">
             <Icon name="target" className="size-8 text-sun" />
             <p className="mt-6 font-display text-2xl font-bold">Our mission</p>
-            <p className="mt-2 text-sm text-white/60">Keep every project supplied on spec, on time.</p>
+            <p className="mt-2 text-sm text-white/60">To constantly and surely grow the wealth and well-being of our shareholders, employees, clients, customers and community.</p>
           </div>
           <div className="rounded-3xl border border-black/10 bg-white p-7">
             <Icon name="eye" className="size-8 text-flame" />
             <p className="mt-6 font-display text-2xl font-bold">Our vision</p>
-            <p className="mt-2 text-sm text-graphite/70">Bahrain’s most trusted industrial supply partner.</p>
+            <p className="mt-2 text-sm text-graphite/70">Best integrated services provider in the region.</p>
           </div>
         </div>
       </section>
@@ -122,11 +122,11 @@ export default function Home() {
       <section className="bg-mist py-24">
         <div className="container-x">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <SectionHeading eyebrow="Products" title="Everything your site and plant need." />
-            <Button href="/products" variant="outline">View all products</Button>
+            <SectionHeading eyebrow="Key clients" title="Brands that lead their categories." />
+            <Button href="/products" variant="outline">View all clients</Button>
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {products.map((p, i) => (
+            {products.slice(0, 8).map((p, i) => (
               <Link
                 key={p.slug}
                 href={`/products#${p.slug}`}
@@ -138,7 +138,7 @@ export default function Home() {
                   <span className="font-display text-sm font-bold text-steel">{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="mt-8 font-display text-2xl font-bold">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-graphite/70">{p.text}</p>
+                <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-graphite/70">{p.text}</p>
                 <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-flame">
                   Learn more <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -157,8 +157,8 @@ export default function Home() {
               <SectionHeading
                 light
                 eyebrow="Services"
-                title="More than supply. Support at every stage."
-                text="Our team stays with you from selection to installation and long after handover."
+                title="A full selection of complementary services."
+                text="Strategic services offered in flexible ways that optimise our clients’ local market return on investment."
               />
               <Button href="/services" className="mt-10">All services</Button>
             </div>
@@ -184,9 +184,9 @@ export default function Home() {
       <section className="container-x py-24">
         <SectionHeading
           center
-          eyebrow="Industries"
-          title="Trusted across Bahrain’s key sectors."
-          text="Different industries, different standards — we know what each one demands."
+          eyebrow="Our channels"
+          title="Leading the evolution of sales management in Bahrain."
+          text="Covering 1,290 retail and wholesale outlets across every relevant channel."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {industries.map((ind) => (
@@ -200,14 +200,14 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Button href="/industries" variant="outline">See how we serve each industry</Button>
+          <Button href="/industries" variant="outline">Explore our channels</Button>
         </div>
       </section>
 
       {/* PROCESS */}
       <section className="bg-mist py-24">
         <div className="container-x">
-          <SectionHeading eyebrow="How it works" title="From enquiry to delivery in four steps." />
+          <SectionHeading eyebrow="Business process" title="Proprietary processes, refined over many years." />
           <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {process.map((step, i) => (
               <li key={step.title} className="relative rounded-3xl bg-white p-7 ring-1 ring-black/5">

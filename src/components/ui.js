@@ -69,15 +69,15 @@ export function CtaBand() {
         <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
             <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">
-              Have a material list ready? Let’s quote it today.
+              Looking for a distribution partner in Bahrain?
             </h2>
             <p className="mt-4 text-lg text-ink/75">
-              Send us your BOQ or requirement and our team will come back with pricing, availability and lead times.
+              ASC welcomes new clients for its world-class sales, merchandising, trade marketing and logistics services.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button href="/contact" variant="dark">Request a quote</Button>
-            <Button href="/products" variant="outline" className="border-ink/25">Browse products</Button>
+            <Button href="/contact" variant="dark">Business inquiry</Button>
+            <Button href="/products" variant="outline" className="border-ink/25">Our brands</Button>
           </div>
         </div>
       </div>
