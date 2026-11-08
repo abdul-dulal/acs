@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
+import CategoryBar from "@/components/CategoryBar";
 import { Button, CtaBand, IconBadge, PageHero } from "@/components/ui";
 import { products } from "@/lib/site";
 
@@ -16,19 +17,7 @@ export default function ProductsPage() {
       />
 
       {/* Category jump bar */}
-      <div className="sticky top-20 z-40 border-b border-black/5 bg-paper/90 backdrop-blur md:top-[116px]">
-        <div className="container-x flex gap-2 overflow-x-auto py-3">
-          {products.map((p) => (
-            <a
-              key={p.slug}
-              href={`#${p.slug}`}
-              className="shrink-0 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-graphite transition hover:border-amber hover:text-ink"
-            >
-              {p.title}
-            </a>
-          ))}
-        </div>
-      </div>
+      <CategoryBar items={products.map(({ slug, title }) => ({ slug, title }))} />
 
       <section className="container-x space-y-6 py-20">
         {products.map((p, i) => (
